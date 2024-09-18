@@ -1,0 +1,330 @@
+body{
+    overflow: hidden;
+}
+
+img{
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+    user-select: none;
+}
+
+input[type="text"] {
+    outline: none;
+    text-align: end;  
+} 
+
+input[type="text"] {
+    -webkit-appearance: textfield !important;
+    -moz-appearance: textfield !important;
+    appearance: textfield !important;
+}
+
+input[type=text]::placeholder {
+    color: silver;
+}
+
+*::-webkit-scrollbar {
+    width: 0px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.container{
+    display: none;
+    position: absolute;
+    width: 110vh;
+    height: 75vh;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 6vh;
+    text-shadow: 2px 1px 1px black;
+}
+
+.background {
+    position: inherit;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 5vh;
+    opacity: 75%;
+    border: 1vh solid #202020;
+}
+
+.div-style {
+    position: inherit;
+    width: 100%;
+    height: 100%;
+    background: var(--GarageBackgroundColor);
+    z-index: -1;
+    border-radius: 5vh;
+    border: 1vh solid #202020;
+}
+
+/* ------------------ HEADER ------------------ */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vh;
+    padding-bottom: 0;
+}
+
+.exit {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-left: 1vh;
+}
+
+
+.server {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vh;
+    margin-left: 10vh;
+}
+
+.server-name {
+    color: white;
+    font-size: 3vh;
+}
+
+.server-market {
+    color: var(--GarageMainColor);
+    font-size: 3vh;
+}
+
+
+.player {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.discord {
+    margin-left: 1vh;
+    width: 5vh;
+    border-radius: 3vh;
+}
+
+.money {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 0.5vh;
+}
+
+.cash-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+    color: white;
+}
+
+/* ------------------ END HEADER ------------------ */
+/* ------------------ content-container ------------------ */
+
+.content-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 90%;
+}
+
+.market {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    margin: 2vh;
+    border-bottom: 1px solid white;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sort-container {
+    position: relative;
+    display: flex;
+    color: silver;
+    font-size: 1.5vh;
+    flex-direction: row-reverse;
+}
+
+.sort-container label {
+    margin-left: 1vh;
+    align-self: center;
+}
+
+.sort-container select {
+    height: 3vh;
+    width: 13vh;
+    font-size: 1.4vh;
+    color: #ffffff;
+    background: var(--GarageBackgroundColor);
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    appearance: none;
+}
+
+.sort-container select:focus {
+    outline: none;
+}
+
+.sort-container::before {
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 45%;
+    transform: translate(-50%,-50%);
+    font-size: 12px;
+    color: #ffffff;
+    pointer-events: none;
+}
+
+.search {
+    padding: 0.5vh;
+    border: none;
+    font-size: 1.5vh;
+    background: transparent;
+    color: white;
+    margin-right: 1vh;
+}
+
+.items-container {
+    grid-gap: 2vh 2vh;
+    overflow: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18vh, 18vh));
+    grid-auto-rows: 20vh;
+    margin: 1vh;
+    justify-items: center;
+    justify-content: center;
+    direction: rtl;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    width: 18vh;
+    flex-direction: column;
+    height: 20vh;
+    background: var(--GarageCartBackgroundColor);
+    color: white;
+    border: 0.1vh solid #e7e1e19c;
+    border-radius: 1vh;
+    justify-content: space-between;
+    margin-bottom: 1vh;
+}
+
+.item:hover {
+    background: var(--GarageCartBackgroundColorHover);
+    border: 0.3vh solid var(--GarageMainColor);
+}
+
+.item:hover > .pay {
+    background: var(--GarageMainColor);
+}
+
+.item-header {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3vh 0vh;
+}
+
+.item-price {
+    color: white;
+    font-size: 1.4vh;
+}
+
+.item-price.currency::before {
+    content: "$";
+    color: #25b925;
+    font-size: bold;
+    margin-right: 5px;
+}
+
+.item-img {
+    width: 15vh;
+}
+
+.item-name {
+    font-size: 1.2vh;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px 0px;
+}
+
+.pay {
+    background: #2e2e2e52;
+    border-radius: 0.5vh;
+    display: flex;
+    cursor: pointer;
+    width: -webkit-fill-available;
+    color: #ffffff;
+    font-weight: 400;
+    padding: 0.4vh 2vh;
+    margin: 0vh 1vh 1vh 1vh;
+    border: 0.1vh solid #d9d9d952;
+    text-shadow: 0px 1px 0px #303030;
+    justify-content: space-between;
+}
+
+.item-pay {
+    color: white;
+    font-size: 1.3vh;
+}
+
+
+/* ------------------ END content-container ------------------ */
+
+.icon-svg {
+    color: var(--GarageMainColor);
+    width: 1.2vh;
+}
+
+.svg-bg {
+    cursor: pointer;
+    width: 5vh;
+}
+
+.path {
+    stroke: var(--GarageMainColor);
+}
+
+.path-hover:hover {
+    stroke: white;
+}
